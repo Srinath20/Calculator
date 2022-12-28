@@ -98,25 +98,19 @@ function divide(){
 
 function operate(){
    if(operater == "+"){
-    document.getElementById("result").innerText =  parseInt(num1) + parseInt(num2);
     console.log(parseInt(num1) + parseInt(num2));
+    document.getElementById("result").innerText = 'The sum of ' + num1 + ' and ' + num2 + ' is = ' + (parseInt(num1) + parseInt(num2));
    }
    if(operater == "-"){
+    document.getElementById("result").innerText = 'The subtraction of ' + num1 + ' and ' + num2 + ' is = ' + (parseInt(num1) - parseInt(num2));
     console.log(parseInt(num1) - parseInt(num2));
    }
    if(operater == "*"){
+    document.getElementById("result").innerText = 'The multiplication of ' + num1 + ' and ' + num2 + ' is = ' + (parseInt(num1) * parseInt(num2));
     console.log(parseInt(num1) * parseInt(num2));
    }
    if(operater == "/"){
+    document.getElementById("result").innerText = 'The division of ' + num1 + ' and ' + num2 + ' is = ' + (parseInt(num1) / parseInt(num2));
     console.log(parseInt(num1)/parseInt(num2));
    }
-}
-function clear(){
-  num1 = null;
-  num2 = null;
-  operater = null;
-  clearAll();
-}
-function clearAll(){
-  Result.textContent = '';
 }
