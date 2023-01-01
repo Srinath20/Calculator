@@ -1,116 +1,37 @@
-var num1;
-var num2;
 var operater;
-var Result = document.getElementById("result");
-
-function Num_9(){
-  if(num1 == null){
-    num1 = document.getElementById("9").value;
+var result = document.getElementById("result");
+//let numbers = document.querySelectorAll('.number');
+// numbers.forEach(number => number.addEventListener("click",input));
+let buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener("click",input));
+function input(e){
+    const value = e.target.value;
+    result.textContent +=value;
+    console.log(value);
   }
-  else{
-    num2 = document.getElementById("9").value;
-  }
-}
-function Num_8(){
-  if(num1 == null){
-    num1 = document.getElementById("8").value;
-  }
-  else{
-    num2 = document.getElementById("8").value;
-  }
-}
-function Num_7(){
-  if(num1 == null){
-    num1 = document.getElementById("7").value;
-  }
-  else{
-    num2 = document.getElementById("7").value;
-  }
-}
-function Num_6(){
-  if(num1 == null){
-    num1 = document.getElementById("6").value;
-  }
-  else{
-    num2 = document.getElementById("6").value;
-  }
-}
-function Num_5(){
-  if(num1 == null){
-    num1 = document.getElementById("5").value;
-  }
-  else{
-    num2 = document.getElementById("5").value;
-  }
-}
-function Num_4(){
-  if(num1 == null){
-    num1 = document.getElementById("4").value;
-  }
-  else{
-    num2 = document.getElementById("4").value;
-  }
-}
-function Num_3(){
-  if(num1 == null){
-    num1 = document.getElementById("3").value;
-  }
-  else{
-    num2 = document.getElementById("3").value;
-  }
-}
-function Num_2(){
-  if(num1 == null){
-    num1 = document.getElementById("2").value;
-  }
-  else{
-    num2 = document.getElementById("2").value;
-  }
-}
-function Num_1(){
-  if(num1 == null){
-    num1 = document.getElementById("1").value;
-  }
-  else{
-    num2 = document.getElementById("1").value;
-  }
-}
-function Num_0(){
-  if(num1 == null){
-    num1 = document.getElementById("0").value;
-  }
-  else{
-    num2 = document.getElementById("0").value;
-  }
-}
 function add(){
-    operater = document.getElementById("+").value;
+ // operater = document.getElementById("+").value;
+  document.getElementById("result").value += "+";
+  document.getElementById("result").textContent += "+";
 }
 function subtract(){
-    operater = document.getElementById("-").value;
+ // operater = document.getElementById("-").value;
+  document.getElementById("result").value += "-";
+  document.getElementById("result").textContent += "-";
 }
 function multiply(){
-    operater = document.getElementById("*").value;
+ // operater = document.getElementById("*").value;
+  document.getElementById("result").value += "*";
+  document.getElementById("result").textContent += "*";
 }
 function divide(){
-    operater = document.getElementById("/").value;
+//  operater = document.getElementById("/").value;
+  document.getElementById("result").value += "/";
+  document.getElementById("result").textContent += "/";
 }
 
-function operate(){
-   if(operater == "+"){
-    console.log(parseInt(num1) + parseInt(num2));
-    document.getElementById("result").innerText = 'The sum of ' + num1 + ' and ' + num2 + ' is = ' + (parseInt(num1) + parseInt(num2));
-   }
-   if(operater == "-"){
-    document.getElementById("result").innerText = 'The subtraction of ' + num1 + ' and ' + num2 + ' is = ' + (parseInt(num1) - parseInt(num2));
-    console.log(parseInt(num1) - parseInt(num2));
-   }
-   if(operater == "*"){
-    document.getElementById("result").innerText = 'The multiplication of ' + num1 + ' and ' + num2 + ' is = ' + (parseInt(num1) * parseInt(num2));
-    console.log(parseInt(num1) * parseInt(num2));
-   }
-   if(operater == "/"){
-    document.getElementById("result").innerText = 'The division of ' + num1 + ' and ' + num2 + ' is = ' + (parseInt(num1) / parseInt(num2));
-    console.log(parseInt(num1)/parseInt(num2));
-   }
+function operate(){ 
+
+  const ans = eval(result.textContent);
+  result.textContent = ans;
 }
